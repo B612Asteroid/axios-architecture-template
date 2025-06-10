@@ -33,7 +33,7 @@ Axios 인스턴스 커스터마이징을 통해 다음에 대하여 설명한다
 │   ├── 01-intro.md
 │   ├── 02-interceptor.md
 │   ├── 03-error-handling.md
-│   ├── 04-token-relay.md
+│   ├── 04-token-refresh.md
 │   ├── 05-multi-instance.md
 │   └── 06-typescript.md
 └── src/ # 예제 폴더
