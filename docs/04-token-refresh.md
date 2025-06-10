@@ -21,10 +21,9 @@ try {
   if (refreshToken) {
     // #. 인스턴스가 아니라 액시오스를 타야 무한 호출을 방지함.
     const {
-      data: { data: token },
-    }: { data: { accessToken; refreshToken } } = await axios.post(
-      `/user/refresh?refreshToken=${refreshToken}`
-    );
+      data: { accessToken, refreshToken },
+    }: { data: { accessToken: string; refreshToken: string } } =
+      await axios.post(`/user/refresh?refreshToken=${refreshToken}`);
 
     const retryRequest = {
       ...error.config,
@@ -37,7 +36,10 @@ try {
   }
 } catch (e) {
   console.error("Token refresh Failed", e);
-  // #. TODO 여기에 인증 실패 에러 주입
+  // #. 에러 실패 로직 주입
+  // #. 최종 실패이므로, 여기서 라우터 사용 등 실제 처리 진행
+  customError.setUserMessage("로그인이 필요합니다.");
+  customError.setCode("EXPIRED_TOKEN");
 }
 ```
 
