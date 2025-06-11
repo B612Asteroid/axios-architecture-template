@@ -8,6 +8,8 @@
 
 ### 📩 refresh-token 구현 전략
 
+- refreshToken은 HttpOnly 쿠키 or 암호화된 localStorage에 저장된다.
+  - 단, 보안 상 HttpOnly + Secure 쿠키 사용이 권장됨
 - 서버에서 access 토큰과 refresh 토큰을 동시에 받는다.
   - Access 토큰의 생명주기는 짧게, refresh 토큰의 생명주기는 길게 하여, 토큰 탈취 시 피해를 최소화 한다.
 - API 호출 시 인증 에러(401)를 응답으로 받았을 때 refresh 토큰을 이용, 새로운 토큰을 발급받는다.

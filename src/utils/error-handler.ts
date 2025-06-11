@@ -35,7 +35,7 @@ export const errorHandler = async (error: AxiosError) => {
         if (refreshToken) {
           // #. 인스턴스가 아니라 액시오스를 타야 무한 호출을 방지함.
           const {
-            data: { accessToken, refreshToken },
+            data: { accessToken, refreshToken: newToken },
           }: { data: { accessToken: string; refreshToken: string } } =
             await axios.post(`/user/refresh?refreshToken=${refreshToken}`);
 
