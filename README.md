@@ -40,6 +40,10 @@ Axios 인스턴스 커스터마이징을 통해 다음에 대하여 설명한다
     ├── apis/ # 인스턴스 폴더
     │   ├── axiosInstance.ts
     │   └── exampleClient.ts
+    ├── types/ # 커스텀 타입 지정
+    │   └── axios.d.ts
+    ├── interfaces/ # 요청 / 응답 타입 지정
+    │   └── axios-type.ts
     ├── utils/
     │   ├── retry.ts
     │   └── errorHandler.ts

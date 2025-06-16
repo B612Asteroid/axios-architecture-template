@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { InternalAxiosRequestConfig } from "axios";
 import { errorHandler } from "@/utils/error-handler";
 
 const instance = axios.create({
